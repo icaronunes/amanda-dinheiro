@@ -2,8 +2,15 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Star, Users, Zap, Shield, Heart, Award, Phone, Mail, MessageCircle, DollarSign, Calculator, Car, Building, Book } from "lucide-react";
+import { NOMESITE } from '@/lib/utils';
 
 const Index = () => {
+
+  function handleScrollToSection(event: React.MouseEvent<HTMLElement>) {
+    event.preventDefault();
+    console.log('object :>> ', "icaro");
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
       {/* Header/Navigation */}
@@ -15,7 +22,7 @@ const Index = () => {
                 <DollarSign className="w-4 h-4 text-white" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                Amanda Dinheiro
+              {NOMESITE}
               </span>
             </div>
             
@@ -39,10 +46,8 @@ const Index = () => {
         <div className="container mx-auto text-center max-w-4xl">
           <div className="animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-green-800 to-emerald-800 bg-clip-text text-transparent leading-tight">
-              Realize Seus Sonhos
-              <span className="block bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                com a Amanda Dinheiro
-              </span>
+              Realize Seus Sonhos com a
+              <span className="text-accent-yellow"> {NOMESITE}</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -51,11 +56,11 @@ const Index = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-4 text-lg group">
-                Conheça Nossos Empréstimos
+              <a href="#emprestimos">Conheça Nossos Empréstimos</a>
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button variant="outline" size="lg" className="border-2 border-gray-300 hover:border-green-500 px-8 py-4 text-lg">
-                Fale Conosco
+              <a href="#contato">Fale Conosco</a>
               </Button>
             </div>
           </div>
@@ -74,7 +79,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 bg-gradient-to-br from-green-50 to-emerald-50">
               <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Zap className="w-8 h-8 text-white" />
@@ -91,7 +96,7 @@ const Index = () => {
                   <span>6-36 meses</span>
                 </div>
               </div>
-              <Button className="w-full bg-green-600 hover:bg-green-700">Solicitar Agora</Button>
+              <Button className="w-full bg-green-600 hover:bg-green-700">Solicitar Agora - Criar pagina</Button>
             </Card>
 
             <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 bg-gradient-to-br from-blue-50 to-indigo-50">
@@ -110,7 +115,7 @@ const Index = () => {
                   <span>Até 96 meses</span>
                 </div>
               </div>
-              <Button className="w-full bg-blue-600 hover:bg-blue-700">Saiba Mais</Button>
+              <Button className="w-full bg-blue-600 hover:bg-blue-700">Saiba Mais - Criar pagina</Button>
             </Card>
 
             <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 bg-gradient-to-br from-purple-50 to-pink-50">
@@ -129,7 +134,7 @@ const Index = () => {
                   <span>Até 60 meses</span>
                 </div>
               </div>
-              <Button className="w-full bg-purple-600 hover:bg-purple-700">Ver Opções</Button>
+              <Button className="w-full bg-purple-600 hover:bg-purple-700">Ver Opções - Criar Pagina</Button>
             </Card>
 
             <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 bg-gradient-to-br from-orange-50 to-yellow-50">
@@ -148,7 +153,7 @@ const Index = () => {
                   <span>Flexível</span>
                 </div>
               </div>
-              <Button className="w-full bg-orange-600 hover:bg-orange-700">Consultar</Button>
+              <Button className="w-full bg-orange-600 hover:bg-orange-700">Consultar - Criar pagina</Button>
             </Card>
           </div>
         </div>
@@ -170,7 +175,7 @@ const Index = () => {
             <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-white overflow-hidden">
               <div className="h-48 bg-gradient-to-r from-green-400 to-emerald-500"></div>
               <CardContent className="p-6">
-                <div className="text-sm text-gray-500 mb-2">10 de maio de 2024 • Equipe Amanda Dinheiro</div>
+                <div className="text-sm text-gray-500 mb-2">10 de maio de 2024 • Equipe {NOMESITE}</div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">Planejamento Financeiro 101: Guia para Iniciantes</h3>
                 <p className="text-gray-600 mb-4">Aprenda o básico do planejamento financeiro para garantir seu futuro.</p>
                 <Button variant="outline" className="text-green-600 border-green-600 hover:bg-green-50">Leia Mais</Button>
@@ -180,7 +185,7 @@ const Index = () => {
             <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-white overflow-hidden">
               <div className="h-48 bg-gradient-to-r from-blue-400 to-indigo-500"></div>
               <CardContent className="p-6">
-                <div className="text-sm text-gray-500 mb-2">22 de abril de 2024 • Equipe Amanda Dinheiro</div>
+                <div className="text-sm text-gray-500 mb-2">22 de abril de 2024 • Equipe {NOMESITE}</div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">Entendendo os Termos do Empréstimo Antes de Contratar</h3>
                 <p className="text-gray-600 mb-4">Desmistificando termos comuns de empréstimos como CET, taxas de juros e períodos de carência.</p>
                 <Button variant="outline" className="text-blue-600 border-blue-600 hover:bg-blue-50">Leia Mais</Button>
@@ -190,7 +195,7 @@ const Index = () => {
             <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-white overflow-hidden">
               <div className="h-48 bg-gradient-to-r from-purple-400 to-pink-500"></div>
               <CardContent className="p-6">
-                <div className="text-sm text-gray-500 mb-2">15 de março de 2024 • Equipe Amanda Dinheiro</div>
+                <div className="text-sm text-gray-500 mb-2">15 de março de 2024 • Equipe {NOMESITE}</div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">5 Dicas Práticas para Economizar Dinheiro no Dia a Dia</h3>
                 <p className="text-gray-600 mb-4">Pequenas mudanças de hábitos que podem fazer uma grande diferença no seu orçamento mensal.</p>
                 <Button variant="outline" className="text-purple-600 border-purple-600 hover:bg-purple-50">Leia Mais</Button>
@@ -200,7 +205,7 @@ const Index = () => {
 
           <div className="text-center mt-12">
             <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-3">
-              Ver Todos os Posts
+              Ver Todos os Posts - Criar Pagina
             </Button>
           </div>
         </div>
@@ -211,7 +216,7 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Conheça a Amanda Dinheiro
+              Conheça a {NOMESITE}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Somos uma equipe dedicada a oferecer as melhores soluções financeiras com transparência, agilidade e foco total nas suas necessidades. Nossa missão é empoderar você a tomar decisões financeiras inteligentes e alcançar a estabilidade e prosperidade que merece.
@@ -260,8 +265,8 @@ const Index = () => {
                 <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Users className="w-10 h-10 text-white" />
                 </div>
-                <h4 className="text-xl font-bold mb-2 text-gray-900">Amanda Silva</h4>
-                <p className="text-gray-600 font-medium mb-2">CEO & Fundadora</p>
+                <h4 className="text-xl font-bold mb-2 text-gray-900">Amanda Dias</h4>
+                <p className="text-gray-600 font-medium mb-2">Sua ligação com o dinheiro</p>
                 <p className="text-gray-600 text-sm">Apaixonada por finanças e ajudar pessoas a alcançarem seus sonhos. Com mais de 10 anos de experiência no mercado financeiro.</p>
               </Card>
 
@@ -361,7 +366,7 @@ const Index = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-4" onClick={() => window.open('https://wa.me/5511987886560', '_blank')}>
                   <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
                     <MessageCircle className="w-6 h-6" />
                   </div>
@@ -371,7 +376,7 @@ const Index = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-4" onClick={(event) => handleScrollToSection(event)}>
                   <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
                     <Phone className="w-6 h-6" />
                   </div>
@@ -395,7 +400,7 @@ const Index = () => {
                 <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-emerald-600 rounded-full flex items-center justify-center">
                   <DollarSign className="w-4 h-4 text-white" />
                 </div>
-                <span className="text-xl font-bold">Amanda Dinheiro</span>
+                <span className="text-xl font-bold">{NOMESITE}</span>
               </div>
               <p className="text-gray-400">
                 Soluções financeiras personalizadas para você alcançar seus objetivos.
@@ -433,7 +438,7 @@ const Index = () => {
           </div>
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Amanda Dinheiro. Todos os direitos reservados.</p>
+            <p>&copy; 2024 {NOMESITE}. Todos os direitos reservados.</p>
           </div>
         </div>
       </footer>
