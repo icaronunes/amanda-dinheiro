@@ -1,11 +1,16 @@
 import { Building, Car, Shield, Zap } from "lucide-react";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
+import { LoanView } from "../ui/LoanView";
+import { get } from "http";
+import { LoanItem } from "@/model/LoanItem";
 
 {
   /* Empréstimos Section */
 }
 export default function LoanSection() {
+  const loans = getLoans();
+
   return (
     <section id="emprestimos" className="py-20 px-6 bg-white">
       <div className="container mx-auto max-w-6xl">
@@ -20,6 +25,20 @@ export default function LoanSection() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
+          {
+            loans.map((loan, index) => (
+              <LoanView key={index} item={loan} />
+            ))
+          }
+          <LoanView
+            item={{
+              title: "Empréstimo Pessoal Rápido",
+              description: "Bom histórico de crédito, renda comprovada.",
+              juros: "1.5%",
+              prazo: "6-36 meses",
+              link: "Solicitar Agora - Criar pagina",
+            }}
+          />
           <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 bg-gradient-to-br from-green-50 to-emerald-50">
             <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
               <Zap className="w-8 h-8 text-white" />
@@ -131,4 +150,15 @@ export default function LoanSection() {
       </div>
     </section>
   );
+}
+function getLoans(): LoanItem[] {
+  return [
+    {
+      title: "Empréstimo Pessoal Rápido",
+      description: "Bom histórico de crédito, renda comprovada.",
+      juros: "1.5%",
+      prazo: "6-36 meses",
+      link: "Solicitar Agora - Criar pagina",
+    },
+  ];
 }

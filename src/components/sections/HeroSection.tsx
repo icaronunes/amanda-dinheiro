@@ -9,13 +9,19 @@ export default function HeroSection() {
         <div className="container mx-auto text-center max-w-4xl">
           <div className="animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-green-800 to-emerald-800 bg-clip-text text-transparent leading-tight">
-              Realize Seus Sonhos com a
+              Realize Seus Sonhos comigo -
               <span className="text-accent-yellow"> {NOMESITE}</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Soluções financeiras personalizadas para você alcançar seus objetivos. Empréstimos com as melhores taxas e consultoria especializada.
+            <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Quer tirar seus planos do papel?
+              A gente te ajuda!
+              <br></br>
+              Tenho soluções financeiras do jeitinho que você precisa com taxas que cabem no bolso e posso te orientar em cada passo.
             </p>
+              <p className="text-3xl md:text-2xl font-bold text-accent-yellow mb-8 max-w-2xl mx-auto leading-relaxed">
+                Bora juntos?
+             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-4 text-lg group">
