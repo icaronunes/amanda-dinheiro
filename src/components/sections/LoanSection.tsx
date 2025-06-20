@@ -2,14 +2,22 @@ import { Building, Car, Shield, Zap } from "lucide-react";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
 import { LoanView } from "../ui/LoanView";
-import { get } from "http";
 import { LoanItem } from "@/model/LoanItem";
+import { useEffect, useState } from "react";
 
-{
-  /* Empréstimos Section */
-}
+{/* Empréstimos Section */}
 export default function LoanSection() {
-  const loans = getLoans();
+  const [loans, setLoans] = useState<LoanItem[]>([]);
+
+  useEffect(() => {
+    fetch("/loan.json")
+      .then((res) => res.json())
+      .then((data: LoanItem[]) => {
+        const list: LoanItem[] = JSON.parse(JSON.stringify(data));
+        setLoans(list);
+      })
+      .catch((err) => console.error("Erro ao carregar JSON:", err));
+  }, []);
 
   return (
     <section id="emprestimos" className="py-20 px-6 bg-white">
@@ -25,20 +33,10 @@ export default function LoanSection() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {
-            loans.map((loan, index) => (
-              <LoanView key={index} item={loan} />
-            ))
-          }
-          <LoanView
-            item={{
-              title: "Empréstimo Pessoal Rápido",
-              description: "Bom histórico de crédito, renda comprovada.",
-              juros: "1.5%",
-              prazo: "6-36 meses",
-              link: "Solicitar Agora - Criar pagina",
-            }}
-          />
+          {loans.map((loan, index) => (
+            <LoanView key={index} item={loan} />
+          ))}
+        
           <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 bg-gradient-to-br from-green-50 to-emerald-50">
             <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
               <Zap className="w-8 h-8 text-white" />
@@ -150,15 +148,4 @@ export default function LoanSection() {
       </div>
     </section>
   );
-}
-function getLoans(): LoanItem[] {
-  return [
-    {
-      title: "Empréstimo Pessoal Rápido",
-      description: "Bom histórico de crédito, renda comprovada.",
-      juros: "1.5%",
-      prazo: "6-36 meses",
-      link: "Solicitar Agora - Criar pagina",
-    },
-  ];
 }
