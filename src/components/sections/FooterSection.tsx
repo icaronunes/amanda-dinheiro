@@ -14,7 +14,7 @@ export default function FooterSection() {
               <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-emerald-600 rounded-full flex items-center justify-center">
                 <DollarSign className="w-4 h-4 text-white" />
               </div>
-              <span className="text-xl font-bold">{NOMESITE}</span>
+              <span className="text-xl font-bold text-accent-yellow">{NOMESITE}</span>
             </div>
             <p className="text-gray-400">
               Emprestimos personalizadas para você alcançar seus objetivos.
@@ -36,7 +36,6 @@ export default function FooterSection() {
             <ul className="space-y-2 text-gray-400">
               <li>Sobre Nós</li>
               <li>Blog</li>
-              <li>Criar Post</li>
               <li>Contato</li>
             </ul>
           </div>
@@ -51,10 +50,9 @@ export default function FooterSection() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+        <div className="border-t border-gray-800 mt-2 pt-8 text-center text-gray-400">
           <p>
-            &copy; {new Date().getFullYear()} {NOMESITE}. Todos os direitos
-            reservados.
+            &copy; {new Date().getFullYear()} {NOMESITE}. Todos os direitos reservados.
           </p>
         </div>
       </div>

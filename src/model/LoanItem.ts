@@ -5,4 +5,6 @@ export interface LoanItem {
     juros: string;
     prazo: string;
     link: string;       
+    color: string;
+    accent: string;
 }

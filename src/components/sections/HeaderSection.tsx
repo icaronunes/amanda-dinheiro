@@ -11,9 +11,9 @@ export default function HeaderSection() {
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-emerald-600 rounded-full flex items-center justify-center">
-                <DollarSign className="w-4 h-4 text-white" />
+                <DollarSign className="w-4 h-4 text-accent-yellow" />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+              <span className="text-xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-accent-yellow">
               {NOMESITE}
               </span>
             </div>
@@ -25,7 +25,7 @@ export default function HeaderSection() {
               <a href="#sobre" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Sobre Nós</a>
             </div>
             
-            <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white">
+            <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-accent-yellow">
               <a href="#contato">Fale Conosco</a>
             </Button>
           </nav>

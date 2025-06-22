@@ -5,41 +5,46 @@
     "juros": "1.5%",
     "prazo": "6-36 meses",
     "link": "Solicitar Agora - Criar pagina",
-    "cor": "#FF5733"
+    "color": "red"
   },
   {
     "title": "Empréstimo Consignado Público",
     "description": "Aposentados e pensionistas com taxas reduzidas.",
     "juros": "1.2%",
     "prazo": "12-60 meses",
-    "link": "Solicitar Agora - Criar pagina"
+    "link": "Solicitar Agora - Criar pagina",
+    "color": "green"
   },
   {
     "title": "Empréstimo para Negativados",
     "description": "Sem consulta ao SPC/Serasa, garantia de veículo.",
     "juros": "2.5%",
     "prazo": "6-24 meses",
-    "link": "Solicitar Agora - Criar pagina"
+    "link": "Solicitar Agora - Criar pagina",
+    "color": "blue"
   },
   {
     "title": "Empréstimo Imobiliário",
     "description": "Financiamento de imóveis, entrada mínima de 20%.",
     "juros": "0.8%",
     "prazo": "120 meses",
-    "link": "Solicitar Agora - Criar pagina"
+    "link": "Solicitar Agora - Criar pagina",
+    "color": "emerald"
   },
   {
     "title": "Empréstimo para Estudantes",
     "description": "Financiamento de cursos, sem juros durante o curso.",
     "juros": "0%",
     "prazo": "24-60 meses",
-    "link": "Solicitar Agora - Criar pagina"
+    "link": "Solicitar Agora - Criar pagina",
+    "color": "rose"
   },
   {
     "title": "Empréstimo para Microempreendedores",
     "description": "Apoio a pequenos negócios, sem burocracia.",
     "juros": "1.8%",
     "prazo": "6-36 meses",
-    "link": "Solicitar Agora - Criar pagina"
+    "link": "Solicitar Agora - Criar pagina",
+    "color": "gray"
   }
 ]

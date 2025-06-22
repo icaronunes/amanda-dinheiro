@@ -5,8 +5,6 @@ import LoanSection from "@/components/sections/LoanSection";
 import BlogSection from "@/components/sections/BlogSection";
 import ContactSection from "@/components/sections/ContactSection";
 import FooterSection from "@/components/sections/FooterSection";
-import { Badge } from "@/components/ui/badge";
-import { CardFooter, CardHeader } from "@/components/ui/card";
 
 const Index = () => {
   return (

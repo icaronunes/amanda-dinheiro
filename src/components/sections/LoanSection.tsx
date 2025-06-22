@@ -1,7 +1,7 @@
 import { Building, Car, Shield, Zap } from "lucide-react";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
-import { LoanView } from "../ui/LoanView";
+import { LoanView } from "../LoanView";
 import { LoanItem } from "@/model/LoanItem";
 import { useEffect, useState } from "react";
 
@@ -37,7 +37,7 @@ export default function LoanSection() {
             <LoanView key={index} item={loan} />
           ))}
         
-          <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 bg-gradient-to-br from-green-50 to-emerald-50">
+          {/* <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 bg-gradient-to-br from-green-50 to-emerald-50">
             <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
               <Zap className="w-8 h-8 text-white" />
             </div>
@@ -143,7 +143,7 @@ export default function LoanSection() {
             <Button className="w-full bg-orange-600 hover:bg-orange-700">
               Consultar - Criar pagina
             </Button>
-          </Card>
+          </Card> */}
         </div>
       </div>
     </section>
