@@ -5,8 +5,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import { Toast } from "./components/ui/toast";
+import CreatePostForm from "./components/forms/CreatePostForm";
+import BlogList from "./pages/BlogLists";
+import BlogItem from "./pages/BlogItem";
 
+import ReactMarkdown, { defaultUrlTransform } from "react-markdown";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -19,6 +22,9 @@ const App = () => (
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
+          <Route path="/post" element={<CreatePostForm />} />
+          <Route path="/posts" element={<BlogList />} />
+          <Route path="/post/:slug" element={<BlogItem />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

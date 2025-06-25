@@ -12,7 +12,7 @@ export default function FooterSection() {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-emerald-600 rounded-full flex items-center justify-center">
-                <DollarSign className="w-4 h-4 text-white" />
+                <DollarSign className="w-4 h-4 text-accent-yellow" />
               </div>
               <span className="text-xl font-bold text-accent-yellow">{NOMESITE}</span>
             </div>

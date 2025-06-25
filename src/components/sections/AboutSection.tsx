@@ -22,12 +22,13 @@ export default function AboutSection() {
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           <div>
             <h3 className="text-3xl font-bold mb-6 text-gray-900">
-              Nossa Visão
+              Minha Visão
             </h3>
             <p className="text-gray-600 leading-relaxed text-lg">
-              Ser referência em consultoria e soluções de crédito, reconhecida
-              pela excelência no atendimento e pela capacidade de transformar
-              positivamente a vida financeira de nossos clientes.
+              Sou referência de consultoria financeira independente, reconhecida
+              pela construção de relações de confiança sólidas tanto com
+              clientes quanto com parceiros bancários, oferecendo sempre uma
+              soluções de crédito personalizadas e competitivas
             </p>
           </div>
 
