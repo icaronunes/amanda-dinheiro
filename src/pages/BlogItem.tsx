@@ -1,15 +1,17 @@
-import { BlogPost, CardBlog } from "@/components/CardBlog";
+import { BlogPost } from "@/components/CardBlog";
 import { colorMap } from "@/components/colors";
 import HeaderSection from "@/components/sections/HeaderSection";
-import ReactMarkdown, { defaultUrlTransform } from "react-markdown";
 import { Card, CardContent } from "@/components/ui/card";
 import { isSafeImageUrl, timeBr } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import MarkdownPreview from "@uiw/react-markdown-preview";
 
 export default function BlogItem() {
   const [post, setState] = useState<BlogPost>();
   const { slug } = useParams();
+
+  const color = colorMap[post?.color]?.base || colorMap.green.base;
 
   useEffect(() => {
     fetch(`http://localhost:3001/item/${slug}`)
@@ -26,7 +28,6 @@ export default function BlogItem() {
       .catch((err) => console.error("Erro ao carregar JSON:", err));
   }, [slug]);
 
-  const color = colorMap[post?.color]?.base || colorMap.green.base;
   return post ? (
     <div>
       <HeaderSection />
@@ -56,12 +57,10 @@ export default function BlogItem() {
             {timeBr(post.date)} • {post.author}
           </div>
           <h3 className="text-xl font-bold mb-3 text-gray-900">{post.title}</h3>
-     
-           <div dangerouslySetInnerHTML={{__html: post.content}}></div>
-          
-          {/* {post.content.split("\n\n").map((mark) => {
-            return <ReactMarkdown children={mark} />;
-          })} */}
+          <MarkdownPreview
+            source={post.content}
+            wrapperElement={{ "data-color-mode": "light" }}
+          />
         </CardContent>
       </Card>
     </div>

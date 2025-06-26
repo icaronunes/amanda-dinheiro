@@ -9,7 +9,6 @@ import CreatePostForm from "./components/forms/CreatePostForm";
 import BlogList from "./pages/BlogLists";
 import BlogItem from "./pages/BlogItem";
 
-import ReactMarkdown, { defaultUrlTransform } from "react-markdown";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -25,6 +24,7 @@ const App = () => (
           <Route path="/post" element={<CreatePostForm />} />
           <Route path="/posts" element={<BlogList />} />
           <Route path="/post/:slug" element={<BlogItem />} />
+
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

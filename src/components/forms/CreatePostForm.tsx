@@ -17,10 +17,10 @@ import { Loader2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { DropdownMenuColor } from "./DropdownMenu";
 import Editor from "react-markdown-editor-lite";
-import ReactMarkdown from "react-markdown";
-import "react-markdown-editor-lite/lib/index.css";
 import React from "react";
-import HtmlRender from "react-markdown-editor-lite/cjs/editor/preview";
+
+import MarkdownPreview from "@uiw/react-markdown-preview";
+import ReactMarkdown from "react-markdown";
 
 const initialStateResponse = {
   message: "",
@@ -37,7 +37,6 @@ export default function CreatePostForm() {
   const [color, setColor] = useState<string>("green");
   const mdEditor = React.useRef(null);
   const [value, setValue] = React.useState("");
-  const [html, setHtml] = React.useState("");
 
   const { toast } = useToast();
 
@@ -45,12 +44,8 @@ export default function CreatePostForm() {
     e.preventDefault();
     setLoading(true);
     const form = new FormData(e.currentTarget);
-    form.append("color", color); // Append the selected color to the form data
-    form.append("content", html); // Append the selected color to the form data
+    form.append("color", color);
 
-    form.forEach((valor, chave) => {
-      console.log(`Chave: ${chave}, Valor: ${valor}`);
-    });
     const value = await createBlogPostAction(form);
 
     formAction(value as typeof initialStateResponse);
@@ -71,8 +66,6 @@ export default function CreatePostForm() {
 
   function handleEditorChange({ html, text }) {
     setValue(text);
-    setHtml(html);
-    console.log('html :>> ', html);
   }
 
   useEffect(() => {
@@ -83,6 +76,9 @@ export default function CreatePostForm() {
           title: "Sucesso!",
           description: state.message,
         });
+        setTimeout(() => {
+          router(`/post/${state.slug}`);
+        }, 2000);
       } else {
         setLoading(false);
         toast({
@@ -155,22 +151,27 @@ export default function CreatePostForm() {
                 );
               }}
             />
-          </div>
-          {/* <div className="space-y-2">
-            <label htmlFor="content">Conteúdo</label>
-            <Textarea
-              id="content"
-              name="content"
-              placeholder="Escreva seu post aqui..."
-              rows={10}
-              required
+            <Editor
+              id=""
+              name=""
+              ref={mdEditor}
+              value={value}
+              style={{
+                height: "500px",
+              }}
+              onChange={handleEditorChange}
+              renderHTML={(text) => {
+                return (
+                  <>
+                    <MarkdownPreview
+                      source={text}
+                      wrapperElement={{ "data-color-mode": "light" }}
+                    />
+                  </>
+                );
+              }}
             />
-            {state?.errors?.content && (
-              <p className="text-sm text-destructive">
-                {state.errors.content[0]}
-              </p>
-            )}
-          </div> */}
+          </div>
           <div className="space-y-2">
             <label htmlFor="imageUrl">
               URL da Imagem de Destaque (Opcional)
