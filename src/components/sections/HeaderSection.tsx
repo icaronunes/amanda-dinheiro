@@ -19,14 +19,14 @@ export default function HeaderSection() {
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Início</a>
-              <a href="#emprestimos" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Empréstimos</a>
-              <a href="#blog" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Blog</a>
-              <a href="#sobre" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Sobre Nós</a>
+              <a href="/#home" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Início</a>
+              <a href="/#emprestimos" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Empréstimos</a>
+              <a href="/#blog" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Blog</a>
+              <a href="/#sobre" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Sobre Nós</a>
             </div>
             
             <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-accent-yellow">
-              <a href="#contato">Fale Conosco</a>
+              <a href="/#contato">Fale Conosco</a>
             </Button>
           </nav>
         </div>

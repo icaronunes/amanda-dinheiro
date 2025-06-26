@@ -14,10 +14,13 @@ export default function FooterSection() {
               <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-emerald-600 rounded-full flex items-center justify-center">
                 <DollarSign className="w-4 h-4 text-accent-yellow" />
               </div>
-              <span className="text-xl font-bold text-accent-yellow">{NOMESITE}</span>
+              <span className="text-xl font-bold text-accent-yellow">
+                {NOMESITE}
+              </span>
             </div>
             <p className="text-gray-400">
-              Emprestimos personalizadas para você alcançar seus objetivos.
+              Realizo seu empréstimo, escolhendo o melhor lugar para transformar
+              seu sonho em realidade!
             </p>
           </div>
 
@@ -34,25 +37,48 @@ export default function FooterSection() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Empresa</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>Sobre Nós</li>
-              <li>Blog</li>
-              <li>Contato</li>
+              <a href="/#sobre">
+                <li className="cursor-pointer">Sobre Mim</li>
+              </a>
+              <a href="/#blog">
+                <li>Blog</li>
+              </a>
+              <a href="/#contato">
+                <li>Contato</li>
+              </a>
             </ul>
           </div>
 
           <div>
             <h4 className="text-lg font-semibold mb-4">Contato</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>contato@amandinheiro.com.br</li>
-              <li>(11) 98788-6560</li>
-              <li>WhatsApp disponível</li>
+              <li
+                className="cursor-pointer"
+                onClick={() =>
+                  window.open("mail:contato@amandadinheiro.com.br")
+                }
+              >
+                Email: contato@amandinheiro.com.br
+              </li>
+              <li
+                className="cursor-pointer"
+                onClick={() => window.open("tel+:5511987886560", "_black")}
+              >
+                (11) 98788-6560
+              </li>
+              <li
+                className="cursor-pointer"
+                onClick={() => window.open("https://wa.me/5511987886560 ")}
+              >
+                WhatsApp disponível
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-2 pt-8 text-center text-gray-400">
           <p>
-            &copy; {new Date().getFullYear()} {NOMESITE}. Todos os direitos reservados.
+            {new Date().getFullYear()} {NOMESITE}. Todos os direitos reservados.
           </p>
         </div>
       </div>

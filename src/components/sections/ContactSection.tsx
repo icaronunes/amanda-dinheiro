@@ -156,7 +156,7 @@ export default function ContactSection() {
               className="space-y-6"
               onClick={() => window.open("mailto:contato@amandinheiro.com.br")}
             >
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-4 cursor-pointer">
                 <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
                   <Mail className="w-6 h-6" />
                 </div>
@@ -167,12 +167,12 @@ export default function ContactSection() {
               </div>
 
               <div
-                className="flex items-center space-x-4"
+                className="flex items-center space-x-4 cursor-pointer"
                 onClick={() =>
                   window.open("https://wa.me/5511987886560", "_blank")
                 }
               >
-                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center cursor-pointer">
                   <MessageCircle className="w-6 h-6" />
                 </div>
                 <div>
@@ -184,7 +184,7 @@ export default function ContactSection() {
               </div>
 
               <div
-                className="flex items-center space-x-4"
+                className="flex items-center space-x-4 cursor-pointer"
                 onClick={() => window.open("tel:+5511987886560")}
               >
                 <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">

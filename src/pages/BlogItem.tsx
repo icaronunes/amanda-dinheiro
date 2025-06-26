@@ -17,12 +17,7 @@ export default function BlogItem() {
     fetch(`http://localhost:3001/item/${slug}`)
       .then((res) => res.json())
       .then((data: BlogPost) => {
-        console.log("object :>> ", data);
         const post: BlogPost = data;
-        console.log(
-          "JSON.parse(post.) :>> ",
-          JSON.parse(JSON.stringify(data.content.toString()))
-        );
         setState(post);
       })
       .catch((err) => console.error("Erro ao carregar JSON:", err));

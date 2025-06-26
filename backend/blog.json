@@ -116,5 +116,24 @@
     "date": "Mon Jun 23 2025",
     "author": "Palmeiras",
     "color": "green"
+  },
+  {
+    "slug": "dadada",
+    "title": "dadada",
+    "content": "dad adaedae \n\n#### dadadad\n\n# deadaed dadada",
+    "summary": "dadadad  dada da",
+    "img": "https://cdn.hashnode.com/res/hashnode/image/upload/v1746625674217/902b1ac1-f7c2-42cd-b12f-d9803e58739d.png",
+    "date": "Thu Jun 26 2025",
+    "author": "Palmeiras",
+    "color": "red"
+  },
+  {
+    "slug": "teste-com-artigo-grande",
+    "title": "Teste com artigo grande",
+    "content": "**Economia** (do grego: οικονομία oikosnomos, \"regras da casa\")[1][nota 1] (também chamada de ciência económica (português europeu) ou **ciência econômica** (português brasileiro)) é a ciência que consiste na análise da produção, distribuição e consumo de bens e serviços.[2] Portanto, a economia é o estudo das escolhas dos indivíduos e do que possibilita a compatibilidade nas escolhas de todos.[2] Esta ciência social estuda a atividade económica, através da aplicação da teoria económica, tendo, na gestão, a sua aplicabilidade prática.\n\nOs modelos e técnicas atualmente usados em economia evoluíram da economia política do final do século XIX, derivado da vontade de usar métodos mais empíricos à semelhança das ciências naturais.[3] Pode representar, em sentido lato, a situação económica de um país ou região; isto é, a sua situação conjuntural (relativamente aos ciclos da economia) ou estrutural.\n\nA economia é, geralmente, dividida em dois grandes ramos: a microeconomia, que estuda os comportamentos individuais, e a macroeconomia, que estuda o resultado agregado dos vários comportamentos individuais. Atualmente, a economia aplica o seu corpo de conhecimento para análise e gestão dos mais variados tipos de organizações humanas (entidades públicas, empresas privadas, cooperativas, etc.) e domínios (internacional, finanças, desenvolvimento dos países, ambiente, mercado de trabalho, cultura, agricultura, etc.).\n\nOutras formas de divisão da disciplina são: a distinção entre economia positiva (\"o que é\", que tenta explicar o comportamento ou fenômeno econômico observado) e economia normativa (\"o que deveria ser\", frequentemente relacionado com políticas públicas); a distinção entre economia ortodoxa, aquela que lida com o nexo \"racionalidade-individualismo-equilíbrio\", e a economia heterodoxa, que pode ser definida por um nexo \"instituições-história-estrutura social\".[4]",
+    "summary": "Wikipédia",
+    "date": "Thu Jun 26 2025",
+    "author": "Economia",
+    "color": "green"
   }
 ]

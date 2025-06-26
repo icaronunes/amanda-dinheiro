@@ -16,11 +16,10 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { DropdownMenuColor } from "./DropdownMenu";
-import Editor from "react-markdown-editor-lite";
 import React from "react";
-
-import MarkdownPreview from "@uiw/react-markdown-preview";
-import ReactMarkdown from "react-markdown";
+import MDEditor from "@uiw/react-md-editor";
+// No import is required in the WebPack.
+import "@uiw/react-markdown-preview/markdown.css";
 
 const initialStateResponse = {
   message: "",
@@ -29,13 +28,19 @@ const initialStateResponse = {
   slug: undefined,
 };
 
+function removeUltimoHifen(str: string): string {
+  if (str.endsWith("- ")) {
+    return str.slice(0, -2);
+  }
+  return str;
+}
+
 export default function CreatePostForm() {
   const router = useNavigate();
 
   const [state, formAction] = useState(initialStateResponse);
   const [loading, setLoading] = useState(false);
   const [color, setColor] = useState<string>("green");
-  const mdEditor = React.useRef(null);
   const [value, setValue] = React.useState("");
 
   const { toast } = useToast();
@@ -45,10 +50,11 @@ export default function CreatePostForm() {
     setLoading(true);
     const form = new FormData(e.currentTarget);
     form.append("color", color);
+    form.append("content", value);
 
-    const value = await createBlogPostAction(form);
+    const post = await createBlogPostAction(form);
 
-    formAction(value as typeof initialStateResponse);
+    formAction(post as typeof initialStateResponse);
   };
 
   function SubmitButton() {
@@ -64,10 +70,6 @@ export default function CreatePostForm() {
     );
   }
 
-  function handleEditorChange({ html, text }) {
-    setValue(text);
-  }
-
   useEffect(() => {
     if (state?.message) {
       setLoading(false);
@@ -81,9 +83,19 @@ export default function CreatePostForm() {
         }, 2000);
       } else {
         setLoading(false);
+        const errosMsg = Object.keys(state.errors)
+          .map((key) => {
+            return state.errors[key];
+          })
+          .reduce(
+            (accumate, current) => accumate + current + "\n- ",
+            "\n- "
+          ) as string;
+        errosMsg.endsWith("-");
+        const cleanMsgs = removeUltimoHifen(errosMsg);
         toast({
-          title: "Erro",
-          description: state.message || "Falha ao criar post.",
+          title: state.errors[0],
+          description: cleanMsgs || "Falha ao criar post.",
           variant: "destructive",
         });
       }
@@ -133,43 +145,12 @@ export default function CreatePostForm() {
             )}
           </div>
           <div className="space-y-2">
-            <label htmlFor="">Conteúdo</label>
-            <Editor
-              id=""
-              name=""
-              ref={mdEditor}
+            <label>Conteúdo</label>
+            <MDEditor
+              height={300}
               value={value}
-              style={{
-                height: "500px",
-              }}
-              onChange={handleEditorChange}
-              renderHTML={(text) => {
-                return (
-                  <div>
-                    <ReactMarkdown>{text}</ReactMarkdown>
-                  </div>
-                );
-              }}
-            />
-            <Editor
-              id=""
-              name=""
-              ref={mdEditor}
-              value={value}
-              style={{
-                height: "500px",
-              }}
-              onChange={handleEditorChange}
-              renderHTML={(text) => {
-                return (
-                  <>
-                    <MarkdownPreview
-                      source={text}
-                      wrapperElement={{ "data-color-mode": "light" }}
-                    />
-                  </>
-                );
-              }}
+              onChange={setValue}
+              data-color-mode="light"
             />
           </div>
           <div className="space-y-2">
